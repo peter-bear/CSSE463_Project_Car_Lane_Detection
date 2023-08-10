@@ -1,5 +1,5 @@
-train: C:\Users\caiy\OneDrive - Rose-Hulman Institute of Technology\Desktop\2023 summer\CSSE463\project\photos\photo50
-val: C:\Users\caiy\OneDrive - Rose-Hulman Institute of Technology\Desktop\2023 summer\CSSE463\project\photos\photo50
+train: 
+val: 
 
 nc: 6
 names: ['person','bicycle','car','motorcycle','bus','truck']
