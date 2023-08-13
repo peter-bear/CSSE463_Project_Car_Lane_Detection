@@ -162,7 +162,7 @@ cython_debug/
 U_Net/data/SDLane/
 U_Net/data/SDLane.zip
 U_Net/model.mod
-Test/images/*
-Test/model.mod
+Test/images/05081544_0305/*
+Test/images/output/*
 Test/output_video.mp4
 Test/Test.zip
