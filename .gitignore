@@ -165,3 +165,4 @@ U_Net/model.mod
 Test/images/*
 Test/model.mod
 Test/output_video.mp4
+Test/Test.zip
