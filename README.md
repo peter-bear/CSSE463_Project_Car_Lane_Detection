@@ -79,6 +79,8 @@ The input image size is (512, 512). The output image size is (512, 512)
 >
 > - Mit-Driving Seg (dataset: https://ieee-dataport.org/open-access/mit-driveseg-semi-auto-dataset)
 
+### Hardware
+RTX 3090 (24 G)
 
 
 ### Quick Usage
