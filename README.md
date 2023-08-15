@@ -84,7 +84,7 @@ The input image size is (512, 512). The output image size is (512, 512)
 
 > 1. Put some images to folder Test->images
 > 2. Put trained model (model.mod) to folder Test
-> 3. Open file Test--> main.ipynb
+> 3. Open file Test/main.ipynb or Test/main.py
 
 
 
