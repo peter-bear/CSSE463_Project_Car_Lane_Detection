@@ -81,6 +81,8 @@ The input image size is (512, 512). The output image size is (512, 512)
 
 ### Hardware
 RTX 3090 (24 G)
+RAM 64G
+CPU: AMD5600X
 
 
 ### Quick Usage
