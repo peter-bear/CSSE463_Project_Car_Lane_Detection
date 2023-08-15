@@ -80,6 +80,7 @@ def predictImage(imgPath, device, U_Net_Model, YOLO_Model):
     # Add the mask to the original image
     return cv2.addWeighted(inputImg, 1, mask, 0.8, 0)  # Adjust the alpha value for transparency
 
+# input lane mask, output straight lines and vanishing point
 def linedetect(mask):
     gray=cv2.cvtColor(mask,cv2.COLOR_BGR2GRAY)
     lines = cv2.HoughLinesP(gray, 1, np.pi / 180, 100, minLineLength=50,maxLineGap=50)
