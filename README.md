@@ -52,7 +52,7 @@ The input image size is (512, 512). The output image size is (512, 512)
 > - **label.py** (label the images in the folder. Please create the "labels" folder parallel to "images" folder before executing. Confidence level can be adjusted)
 > - **train.py** (train the model with configuration in .yaml file)
 > - **predict.py** (generate the image with boxes based on model using)
-> - **file structure for training dataset under same folder **:
+> - **file structure for training dataset under same folder**:
 >   [path]/images/       store all images
 >   [path]/labels/       store all labels in .txt file corresponding to images
 
@@ -126,9 +126,20 @@ The SDLane dataset is a publicly available resource for advancing autonomous dri
 
 Ultralytics is a toolkit for computer vision, specializing in object detection and segmentation tasks. It's known for integrating popular frameworks like YOLO (You Only Look Once) algorithm. YOLO, a real-time object detection method, divides an image into a grid and predicts bounding boxes and class probabilities for each grid cell. This approach enables fast and accurate object detection by processing images in a single pass. Ultralytics leverages YOLO's capabilities for streamlined model training and evaluation. Together, they offer a powerful solution for rapid, precise, and efficient object detection, benefiting applications like autonomous driving, surveillance, and object recognition.
 
-![image-20230813173642891](README.assets/image-20230813173642891.png)
+![image-20230813173642891](README.assets/combined1.jpg)
+![image-20230813174539712](README.assets/0175.png)
+![image-20230813174539712](README.assets/0245.png)
 
+### Properties shown on image
+> detected lane as green
 
+> hough transformation line produced by the previous line as pink
+
+> while focus circle line and circle around center as vanishing point
+
+> boxes around the detected vehicles
+
+> object index, confirm probability, estimated distance
 
 ### Training Model Details
 
@@ -137,6 +148,7 @@ Ultralytics is a toolkit for computer vision, specializing in object detection a
 example label file content, where first line is the label of object "0" with box of whole image, second is box of object 1 in up left quarter
 
 > 0 0.5 0.5 1 1
+
 > 1 0.25 0.25 0.5 0.5
 
 
@@ -144,6 +156,9 @@ example label file content, where first line is the label of object "0" with box
 Name of classes for YOLO model
 
 > {0: 'person', 1: 'bicycle', 2: 'car', 3: 'motorcycle', 4: 'airplane', 5: 'bus', 6: 'train', 7: 'truck', 8: 'boat', 9: 'traffic light', 10: 'fire hydrant', 11: 'stop sign', 12: 'parking meter', 13: 'bench', 14: 'bird', 15: 'cat', 16: 'dog', 17: 'horse', 18: 'sheep', 19: 'cow', 20: 'elephant', 21: 'bear', 22: 'zebra', 23: 'giraffe', 24: 'backpack', 25: 'umbrella', 26: 'handbag', 27: 'tie', 28: 'suitcase', 29: 'frisbee', 30: 'skis', 31: 'snowboard', 32: 'sports ball', 33: 'kite', 34: 'baseball bat', 35: 'baseball glove', 36: 'skateboard', 37: 'surfboard', 38: 'tennis racket', 39: 'bottle', 40: 'wine glass', 41: 'cup', 42: 'fork', 43: 'knife', 44: 'spoon', 45: 'bowl', 46: 'banana', 47: 'apple', 48: 'sandwich', 49: 'orange', 50: 'broccoli', 51: 'carrot', 52: 'hot dog', 53: 'pizza', 54: 'donut', 55: 'cake', 56: 'chair', 57: 'couch', 58: 'potted plant', 59: 'bed', 60: 'dining table', 61: 'toilet', 62: 'tv', 63: 'laptop', 64: 'mouse', 65: 'remote', 66: 'keyboard', 67: 'cell phone', 68: 'microwave', 69: 'oven', 70: 'toaster', 71: 'sink', 72: 'refrigerator', 73: 'book', 74: 'clock', 75: 'vase', 76: 'scissors', 77: 'teddy bear', 78: 'hair drier', 79: 'toothbrush'}
+
+Classes used for vehicle detection
+> {0: 'person', 1: 'bicycle', 2: 'car', 3: 'motorcycle', 4 'bus', 5: 'truck'}
 
 
 
@@ -175,7 +190,9 @@ Collaborative efforts involving iterative model training, thorough evaluation, a
 
 ![image-20230813174539712](README.assets/image-20230813174539712.png)
 
+To handle the real-life traffic environment, lane detection and vehicle recognition should be combined to accurately identify the location of the objects on the road. Currently, the distance estimation based on label box width is implemented in our model, while the properties of the dataset camera, including its height and visual angle, is missing for more accurate calculation. While the vehicle shows the side part, the distance would be greatly underestimated, while the one blocked by image boundary is overestimated. 
 
+By continuesly identifying video stream dataset, through the surrounding environment as reference, it would be possible to track the moving path and velocity of the vehicles, including the observer's, and utilizing them to predict their possible movements in the following seconds. 
 
 
 
